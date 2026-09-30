@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "installCommand": "npm ci",
+  "outputDirectory": "./dist",
+  "framework": "nestjs",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/dist"
+    }
+  ]
+}
