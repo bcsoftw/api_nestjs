@@ -1,16 +1,13 @@
 {
   "version": 2,
-  "builds": [
+  "buildCommand": "npm run build",
+  "installCommand": "npm ci",
+  "outputDirectory": "./dist",
+  "framework": "nestjs",
+  "rewrites": [
     {
-      "src": "main.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/main.js",
-      "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"]
+      "source": "/(.*)",
+      "destination": "/dist"
     }
   ]
 }
