@@ -1,7 +1,7 @@
 import { Controller, Get, Header } from '@nestjs/common';
 import { ApiExcludeController } from '@nestjs/swagger';
 
-const DOCS_URL = 'https://api-nestjs-beige.vercel.app/docs';
+const DOCS_URL = 'https://apinestjs-wine.vercel.app/docs';
 
 const WELCOME_HTML = `<!doctype html>
 <html lang="es">
