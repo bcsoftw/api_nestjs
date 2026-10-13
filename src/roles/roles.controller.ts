@@ -157,8 +157,7 @@ export class RolesController {
     summary: 'Get all roles paginated',
     description:
       'Returns a list paginated of all roles paginated in the system.',
-  })
-  @ApiQuery({ type: RoleQueryDto }) 
+  }) 
   @ApiResponse({
     status: 200,
     description: 'List of roles paginated successfully.',

@@ -260,7 +260,6 @@ export class UsersController {
     description:
       'Retrieves a list of all users paginated along with their associated roles.',
   })
-  @ApiQuery({ type: UserQueryDto }) //
   @ApiResponse({
     status: 200,
     description: 'Users retrieved successfully.',
