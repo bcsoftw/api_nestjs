@@ -14,7 +14,7 @@ import {
 import { CreateUserDto } from './dto/create-user.dto';
 import { AssignRoleDto } from './dto/assign-role.dto';
 import { UsersService } from './users.service';
-import { ApiBearerAuth, ApiOperation, ApiResponse } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiOperation, ApiQuery, ApiResponse } from '@nestjs/swagger';
 import { AuthGuard } from '@nestjs/passport';
 import { PermissionsGuard } from '../common/guards/permissions.guard';
 import { RequirePermissions } from '../common/decorators/permissions.decorator';
@@ -260,6 +260,7 @@ export class UsersController {
     description:
       'Retrieves a list of all users paginated along with their associated roles.',
   })
+  @ApiQuery({ type: UserQueryDto }) //
   @ApiResponse({
     status: 200,
     description: 'Users retrieved successfully.',
