@@ -16,7 +16,7 @@ import { RolesService } from './roles.service';
 import { CreateRoleDto } from './dto/create-role.dto';
 import { CreatePermissionDto } from './dto/create-permission.dto';
 import { AssignPermissionDto } from './dto/assign-permission.dto';
-import { ApiBearerAuth, ApiOperation, ApiResponse } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiOperation, ApiQuery, ApiResponse } from '@nestjs/swagger';
 
 import { AuthGuard } from '@nestjs/passport';
 import { PermissionsGuard } from '../common/guards/permissions.guard';
@@ -158,6 +158,7 @@ export class RolesController {
     description:
       'Returns a list paginated of all roles paginated in the system.',
   })
+  @ApiQuery({ type: RoleQueryDto }) 
   @ApiResponse({
     status: 200,
     description: 'List of roles paginated successfully.',
