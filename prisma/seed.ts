@@ -3,6 +3,7 @@ import { PrismaClient } from '../src/generated/prisma/client.js';
 import { PrismaPg } from '@prisma/adapter-pg';
 import * as bcrypt from 'bcrypt';
 
+
 const permissionData = [
   { name: 'CREATE_USER' },
   { name: 'READ_USER' },
