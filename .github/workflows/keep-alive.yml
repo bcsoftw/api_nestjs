@@ -2,8 +2,8 @@ name: Mantener Supabase Activo
 
 on:
   schedule:
-    # Se ejecuta a las 00:00 cada 6 días
-    - cron: '0 0 */6 * *'
+    # Se ejecuta a las 00:00 UTC cada 3 días (margen seguro frente a la pausa de 7 días)
+    - cron: '0 0 */3 * *'
   workflow_dispatch: # Permite ejecutarlo manualmente para probar
 
 jobs:
@@ -12,6 +12,6 @@ jobs:
     steps:
       - name: Hacer consulta a Supabase
         run: |
-          curl -i -X GET "${{ secrets.SUPABASE_URL }}/rest/v1/Role?limit=1" \
-          -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
-          -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}"
+          curl -i --fail-with-body -X GET "${{ secrets.SUPABASE_URL }}/rest/v1/" \
+            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
+            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}"
